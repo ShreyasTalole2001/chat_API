@@ -1,0 +1,29 @@
+POST http://localhost:3000/chat/createChat HTTP/1.1
+content-type: application/json
+
+{
+    "studentName" : "Shreyash Talole",
+    "teacherName" : "",
+    "chatID" : "",
+    "subject" : "PHYSICS",
+    "date" : "12-03-2023",
+    "question" : "What is pully?",
+    "answer" : ""
+}
+
+###
+POST http://localhost:3000/chat/updateReply/252 HTTP/1.1
+content-type: application/json
+
+{
+    "teacherName" : "H. C. Verma",
+    "answer" : "this is answer - 3",
+    "chatID" : "001",
+    "_id" : "64423f5e31a23fabff885fd3"
+}
+
+###
+GET http://localhost:3000/chat/getAllChats HTTP/1.1
+
+###
+GET http://localhost:3000/chat/getChats/PHYSICS HTTP/1.1
