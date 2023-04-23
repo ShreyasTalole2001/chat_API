@@ -32,9 +32,12 @@ router.post('/createChat', async (req, res) => {
 router.post('/updateReply/:ChatID', async (req, res) => {
 
     const reply = req.body
+    console.log(reply)
+    console.log(req.params.ChatID)
+
 
     try {
-        const filter = { chtID: req.body.ChatID }
+        const filter = { _id: req.params.ChatID }
         await Chat.findOneAndUpdate(filter, { answer: reply.answer, teacherName: reply.teacherName }, {new: true, setDefaultsOnInsert: true})
     } catch (error) {
         console.log(error)
